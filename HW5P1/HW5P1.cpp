@@ -15,17 +15,45 @@ using namespace std;
 // Main code
 int main() {
 
+  // declare vars
+  string firstName;
+  string date;
+  int TestResult;
+  int count = 0;
+  int cumulative_cases = 0;
+
   // setup
-  ifstream infile;      // Declare inputs stream var
-  char ch;              // read in chars
-  infile.open("aSuperSong.dat"); // Open file
-  infile.get(ch);       // get the first character
+  ifstream infile;  // access file
+  ofstream outfile; // save results of analysis
 
+  // char ch;                            // read in chars
 
-  while(!infile.eof()) // '!' inverts boolean. Stops when end of file is reached
-    {
-      cout << ch;     //displays character
-      infile.get(ch); //get next character
+  infile.open("TestResultsData.dat"); // Open file
+
+  // check date
+  infile >> date;
+  cout << date << endl;
+
+  // validate first 2 pieces of information
+  // infile >> firstName;
+  // cout << firstName << ' ';
+  // infile >> TestResult;
+  // cout << TestResult << endl;
+
+  //'!' inverts boolean. Stops when end of file is reached
+  while (infile) {
+    // update number of cases & persons tested
+    cumulative_cases = cumulative_cases + TestResult;
+    count++; // increment the number of patients
+
+    // read next line
+    infile >> firstName;
+    infile >> TestResult;
+    if (count == 1) {
+      infile.close();
     }
+  }
+  cout << count << endl;
+  cout << cumulative_cases << endl;
   return 0;
 }
