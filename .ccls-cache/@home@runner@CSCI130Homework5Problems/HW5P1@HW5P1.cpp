@@ -19,7 +19,7 @@ int main() {
   string firstName;
   string date;
   int TestResult;
-  int count = 0;
+  int count = -1;
   int cumulative_cases = 0;
 
   // setup
@@ -49,11 +49,9 @@ int main() {
     // read next line
     infile >> firstName;
     infile >> TestResult;
-    if (count == 1) {
-      infile.close();
-    }
   }
-  cout << count << endl;
-  cout << cumulative_cases << endl;
+  cout << "Total Number Of Cases = " << cumulative_cases << endl;
+  cout << "Number Of Persons Tested = " << count << endl;
+  infile.close();
   return 0;
 }
