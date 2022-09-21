@@ -1,0 +1,4 @@
+09.01.2020
+Total Number Of Cases = 4
+Number Of Persons Tested = 77
+The prevalence is 5.19481 %
