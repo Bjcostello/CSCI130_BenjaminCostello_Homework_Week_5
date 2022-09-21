@@ -30,6 +30,8 @@ int main() {
 
   infile.open("TestResultsData.dat"); // Open file
 
+  outfile
+  
   // check date
   infile >> date;
   cout << date << endl;
@@ -42,13 +44,14 @@ int main() {
 
   //'!' inverts boolean. Stops when end of file is reached
   while (infile) {
-    // update number of cases & persons tested
-    cumulative_cases = cumulative_cases + TestResult;
-    count++; // increment the number of patients
 
     // read next line
     infile >> firstName;
     infile >> TestResult;
+
+    // update number of cases & persons tested
+    cumulative_cases = cumulative_cases + TestResult;
+    count++; // increment the number of patients
   }
   cout << "Total Number Of Cases = " << cumulative_cases << endl;
   cout << "Number Of Persons Tested = " << count << endl;
