@@ -30,12 +30,13 @@ int main() {
 
   infile.open("TestResultsData.dat"); // Open file
 
-  outfile
+  outfile.open("AnalyzedData.txt");   //open output file
   
   // check date
   infile >> date;
   cout << date << endl;
 
+  outfile << date<<endl;
   // validate first 2 pieces of information
   // infile >> firstName;
   // cout << firstName << ' ';
@@ -53,8 +54,14 @@ int main() {
     cumulative_cases = cumulative_cases + TestResult;
     count++; // increment the number of patients
   }
-  cout << "Total Number Of Cases = " << cumulative_cases << endl;
-  cout << "Number Of Persons Tested = " << count << endl;
+  outfile << "Total Number Of Cases = " << cumulative_cases << endl;
+  outfile << "Number Of Persons Tested = " << count << endl;
+  outfile << "The prevalence is ";
+  outfile << ((static_cast<double>(cumulative_cases))/count)*100;
+  outfile << " %" << endl;
+  
+  //close all files
   infile.close();
+  outfile.close();
   return 0;
 }
