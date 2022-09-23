@@ -17,15 +17,17 @@ int main() {
 
   for (int i = 0; i <= 9; i++) {
     modulo[i] = (numbers[i] % divisor);
+    // cout << (numbers[i] % divisor) << endl;
   }
 
   for (int i = 0; i <= 9; i++) {
     for (int a = i + 1; a <= 9; a++) {
-      if (modulo[i] == modulo[a]) {
+      if ((modulo[i] == modulo[a]) and (num_of_modulo != 1)) {
         copy(modulo + a,  // copy everything starting here
              modulo + 9,  // and ending here, not including it,
              modulo + i); // to this destination
         num_of_modulo--;
+        // cout << "num of modulo = " << num_of_modulo << endl;
       }
     }
   }
