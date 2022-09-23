@@ -12,13 +12,21 @@
 using namespace std;
 
 int main() {
-  int i
-  list<int> list_of_ints;
 
-  while (i != 9) {
-    list_of_ints.push_back(cin);
-    cout << list_of_ints;
-    i++
+  double WCI, TEMP, WIND_SPEED;
+
+  cout << "|  TEMP C  |   WCI   | WIND SPEED |" << endl;
+  cout << "|----------|---------|------------|" << endl;
+
+  for (int a = 2; a <= 10; a = a + 4) // temp loop
+  {
+    for (int b = 5; b <= 11; b = b + 2) // wind speed loop
+    {
+      TEMP = a;
+      WIND_SPEED = b;
+      WCI = (13.12 + (0.6125 * TEMP) - (11.37 * pow(WIND_SPEED, 0.16)) +
+             ((0.3965 * TEMP) * pow(WIND_SPEED, 0.16))); // calculation
+    }
   }
   return 0;
 }

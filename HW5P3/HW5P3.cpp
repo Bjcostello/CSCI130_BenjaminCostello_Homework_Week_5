@@ -17,7 +17,7 @@ int main() {
 
   for (int i = 0; i <= 9; i++) {
     modulo[i] = (numbers[i] % divisor);
-    // cout << (numbers[i] % divisor) << endl;
+    //cout << (numbers[i] % divisor) << endl;
   }
 
   for (int i = 0; i <= 9; i++) {
