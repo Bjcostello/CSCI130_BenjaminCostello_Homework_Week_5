@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
   int L;
-  double A, B, totalArea, Cost;
+  double A, B, totalArea, Cost, totalCost;
 
   cin >> Cost; // cost per square meter of lawn
   cin >> L;    // # of lawns to mow
@@ -14,7 +14,10 @@ int main() {
     cin >> A >> B; // length and width of a lawn
 
     totalArea = totalArea + (A * B);
+    L--;
   }
-  cout << (totalArea * Cost);
+  totalCost = (totalArea * Cost);
+  cout << fixed;
+  cout << setprecision(8) << totalCost;
   return 0;
 }
