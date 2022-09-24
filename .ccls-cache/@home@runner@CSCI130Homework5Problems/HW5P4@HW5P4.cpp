@@ -26,6 +26,28 @@ int main() {
       WIND_SPEED = b;
       WCI = (13.12 + (0.6125 * TEMP) - (11.37 * pow(WIND_SPEED, 0.16)) +
              ((0.3965 * TEMP) * pow(WIND_SPEED, 0.16))); // calculation
+
+      if ((a < 10) and (b < 10))
+        if (WCI > 0)
+          cout << "|    0" << TEMP << "    | " << setprecision(5) << WCI
+               << " |     0" << WIND_SPEED << "     |" << endl;
+        else
+          cout << "|    0" << TEMP << "    | " << setprecision(4) << WCI
+               << " |     0" << WIND_SPEED << "     |" << endl;
+      else if ((a >= 10) and (b < 10))
+        if (WCI > 0)
+          cout << "|    " << TEMP << "    | " << setprecision(5) << WCI
+               << " |     0" << WIND_SPEED << "     |" << endl;
+        else
+          cout << "|    " << TEMP << "    | " << setprecision(4) << WCI
+               << " |     0" << WIND_SPEED << "     |" << endl;
+      else if ((a >= 10) and (b >= 10))
+        if (WCI > 0)
+          cout << "|    " << TEMP << "    | " << setprecision(5) << WCI
+               << " |     " << WIND_SPEED << "     |" << endl;
+        else
+          cout << "|    " << TEMP << "    | " << setprecision(4) << WCI
+               << " |     " << WIND_SPEED << "     |" << endl;
     }
   }
   return 0;
